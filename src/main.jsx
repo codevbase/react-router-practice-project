@@ -7,25 +7,22 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
-import Header from './components/Header/Header.jsx';
 import Root from './components/Root/Root.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Home from './components/Home/Home.jsx';
+import Blogs from './components/Blogs/Blogs.jsx';
+import Users from './components/Users/Users.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Root
+    Component: Root,
+    children: [
+      {index: true, Component:Home },
+      {path: "blogs", Component:Blogs},
+      {path: "users", Component: Users },
+      
+    ],
   },
-
-  {
-    path: "/header",
-    Component: Header
-  },
-  {
-    path: "/footer",
-    Component: Footer
-  }
-
 ]);
 
 createRoot(document.getElementById('root')).render(
