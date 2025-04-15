@@ -17,10 +17,14 @@ const router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-      {index: true, Component:Home },
-      {path: "blogs", Component:Blogs},
-      {path: "users", Component: Users },
-      
+      { index: true, Component: Home },
+      { path: "blogs", Component: Blogs },
+      {
+        path: "users",
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        Component: Users
+      },
+
     ],
   },
 ]);
@@ -29,6 +33,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
 
     <RouterProvider router={router} />
-   
+
   </StrictMode>,
 )
