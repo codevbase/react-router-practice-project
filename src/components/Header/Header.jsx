@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {  NavLink } from 'react-router';
 
 const Header = () => {
     return (
         <div>
             <nav>
                 
-                <Link to="/">Home</Link>
+                <NavLink to="/">Home</NavLink>
                 {/* <Link to="/footer">Footer</Link> */}
-                <Link to="/blogs">Blogs</Link>
-                <Link to="/users">Users</Link>
+                <NavLink to="/blogs">Blogs</NavLink>
+                <NavLink to="/users">Users</NavLink>
+                <NavLink to="/users2">Users2</NavLink>
             </nav>
         </div>
     );
