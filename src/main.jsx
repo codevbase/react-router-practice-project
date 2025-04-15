@@ -7,17 +7,30 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router";
+import Header from './components/Header/Header.jsx';
+import Root from './components/Root/Root.jsx';
+import Footer from './components/Footer/Footer.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <h1>React Router created</h1>
-}
+    Component: Root
+  },
+
+  {
+    path: "/header",
+    Component: Header
+  },
+  {
+    path: "/footer",
+    Component: Footer
+  }
+
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    
+
     <RouterProvider router={router} />
    
   </StrictMode>,
